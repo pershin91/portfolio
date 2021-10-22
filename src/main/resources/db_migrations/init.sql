@@ -1,4 +1,4 @@
-create table productEntity
+create table product
 (
     id bigserial not null,
     name varchar,
@@ -7,11 +7,11 @@ create table productEntity
 );
 
 create unique index product_code_uindex
-	on productEntity (code);
+	on product (code);
 
 create unique index product_id_uindex
-	on productEntity (id);
+	on product (id);
 
-alter table productEntity
+alter table product
     add constraint product_pk
         primary key (id);
