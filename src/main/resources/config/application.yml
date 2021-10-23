@@ -4,9 +4,16 @@ spring:
     username: postgres
     password: docker
     driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db_migrations
+    encoding: UTF-8
 
 management:
   endpoints:
     web:
       exposure:
-        include: [health, info, env]
+        include: [health, info]
+  endpoint:
+    health:
+      show-details: always
